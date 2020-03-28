@@ -1,7 +1,8 @@
 const createError = require('http-errors');
 var monk = require('monk')
 
-var db = monk("mongodb://localhost:27017/dbstolenreport");
+//var db = monk("mongodb://localhost:27017/dbstolenreport");
+var db = monk("mongodb://heroku_033t8cx0:vc1nj211l71ouos8vn4duhcjs4@ds227664.mlab.com:27664/heroku_033t8cx0")
  // lcokReport 
 module.exports = {
     userReport : async ( req , res , next) => {
@@ -36,7 +37,11 @@ module.exports = {
              "Location" : { "latitude": req.body.latitude , "longitude": req.body.longitude } , 
              "status": "report"
         }
-
+  /*      db.then(() => {
+           console.log("connected")
+          })*/
+        //  res.json({"status":true , "message":"test"})
+        
         db.get("car_stolenreport").insert(report , (err , result) => {
 
             if(!err || result!=null) {

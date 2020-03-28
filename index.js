@@ -2,13 +2,14 @@ const express =  require("express")
 const bodyParser = require("body-parser")
 const cors = require("cors")
 const http = require("http")
-const config = require("./config/Config")
+
+const PORT = process.env.PORT || 8081
 // set server
 const app = express() 
+const server  = http.createServer(app)
 //config.server
-
-
-
+server.listen( PORT,()=> console.log("running server port >>" , PORT))
+//config.server.listen(PORT, () => console.log("Running server >>" , PORT))
 // set 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -37,4 +38,4 @@ app.use((err, req, res, next) => {
     res.send({  error: {  status: err.status || 500 ,  message: err.message  } });
   
   });
-  require('./webSocket/stolen.socket')
+//  require('./webSocket/stolen.socket')
