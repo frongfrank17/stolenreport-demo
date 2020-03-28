@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 
 // set  router path  
-const StolenreportController = require('./Controller/Stolenreport.Controller')
+const StolenreportController = require("./Controller/stolenreport.Controller")
 app.use("/api/stolen/v1/" , StolenreportController)
 //  error catch 
 app.use((req, res, next) => {
