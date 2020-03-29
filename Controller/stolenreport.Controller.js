@@ -5,7 +5,7 @@ const Model_stolenreport_getReport = require('../Models/getReport.Model.js')
 const Model_stolenreport_userReport = require('../Models/userReport.Model.js')
 const Model_stolenreport_unlockReport = require('../Models/unlockReport.Model.js')
 router.get("/report/getLists" , Model_stolenreport_reportLists.reportLists)
-// api/stolenreport/v1/report/getLists
+// api/stolen/v1/report/getLists
 router.get("/report/getReport" , Model_stolenreport_getReport.getReport)
 // api/stolenreport/v1/report/getReport?_id=
 router.post("/user/lockReport" , Model_stolenreport_userReport.userReport)

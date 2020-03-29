@@ -1,10 +1,10 @@
-/*var monk = require('monk')
+var monk = require('monk')
 var db = monk("mongodb://heroku_033t8cx0:vc1nj211l71ouos8vn4duhcjs4@ds227664.mlab.com:27664/heroku_033t8cx0");
-const config = require('../config/Config')
-const IO = config.server 
-
+const config = require('../index')
+const IO = config.ws
+console.log(IO)
 IO.on("connection" , (socket) => {
-
+    console.log("connected cliend socketID >>" ,socket.id)
     setInterval(() => {
         try {
 
@@ -16,8 +16,8 @@ IO.on("connection" , (socket) => {
         } )
     }catch(err){ console.log(err) }
 
-    }, 1000 );
+    }, 15000 );
 
 
 
-})*/
+})
