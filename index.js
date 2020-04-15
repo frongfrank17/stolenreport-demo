@@ -3,7 +3,7 @@ const bodyParser = require("body-parser")
 const cors = require("cors")
 const http = require("http")
 const socketIO = require('socket.io')
-const PORT = process.env.PORT || 8081
+const PORT = process.env.PORT || 8080
 // set server
 const app = express() 
 const server  = http.createServer(app)

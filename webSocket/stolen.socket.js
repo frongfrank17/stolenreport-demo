@@ -10,8 +10,8 @@ IO.on("connection" , (socket) => {
 
         db.get("car_stolenreport").find( { status : 'report'} , (err , result) => {
             
-                IO.emit("list-count-stolenreport" , result.length)
-                IO.emit("list-stolenreport" , JSON.stringify(result))
+                IO.emit("stolen-report-count" , result.length)
+                IO.emit("stolen-report-lists" , JSON.stringify(result))
                // socket.emit("count-list-stolenreport" ,  )
         } )
     }catch(err){ console.log(err) }
