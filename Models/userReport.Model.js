@@ -34,8 +34,13 @@ module.exports = {
                       "connect_type" : [ req.body.connect_type1, req.body.connect_type2 ]
                   }
              },
-             "Location" : { "latitude": req.body.latitude , "longitude": req.body.longitude } , 
-             "status": "report"
+             "Location" : {
+                "Report"  : { "latitude": req.body.latitude , "longitude": req.body.longitude } , 
+                "Station" : { "latitude": req.body.station_latitude , "longitude": req.body.station_longitude } ,
+                "UnLock"  : { "latitude": req.body.unlock_latitude , "longitude": req.body.unlock_longitude }
+             },
+             "status": "report" , 
+             "Staion" : req.body.station
         }
   /*      db.then(() => {
            console.log("connected")

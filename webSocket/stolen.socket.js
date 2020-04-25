@@ -2,7 +2,7 @@ var monk = require('monk')
 var db = monk("mongodb://heroku_033t8cx0:vc1nj211l71ouos8vn4duhcjs4@ds227664.mlab.com:27664/heroku_033t8cx0");
 const config = require('../index')
 const IO = config.ws
-console.log(IO)
+const EventMap = IO.of('/Event')
 IO.on("connection" , (socket) => {
     console.log("connected cliend socketID >>" ,socket.id)
     setInterval(() => {
@@ -19,5 +19,6 @@ IO.on("connection" , (socket) => {
     }, 15000 );
 
 
-
 })
+
+
