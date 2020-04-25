@@ -1,0 +1,39 @@
+Usercell -----
+POST :: https://stolen-report-demo.herokuapp.com/api/stolen/v1/user/Report
+body 
+{
+	"first_name" :"ex",
+	"last_name"  : "ex",
+	"gender" : "male",
+	"email" : "emailex@gmail.com",
+	"phone_number" : "089-xxx-xxxx",
+	"plate_number" : "1234" , 
+	"plate_province" : "กรุงเทพ",
+	"car_brand" : "BMX" , 
+	"car_model" : "7X" ,
+	"battery_type" : "Panasonic" ,
+	"battery_size" : "XXL" , 
+	"connector_type" : [ "RL69" , "LR35"] ,
+	"latitude" :  "13.832060" ,
+	"longitude" : "100.561470"	
+	
+}
+GET DETAIL
+
+GET :: https://stolen-report-demo.herokuapp.com/api/stolen/v1/report/getReport?id=5e7f74364d959e3e1875583d
+{"id" : _id }
+
+GET LISTS 
+GET :: https://stolen-report-demo.herokuapp.com/api/stolen/v1/report/getLists
+
+EDIT USER UNREPORT 
+POST :: https://stolen-report-demo.herokuapp.com/api/stolen/v1/user/lockReport
+body {
+    id : _id
+}
+
+EDIT STATION LOCK 
+POST :: https://stolen-report-demo.herokuapp.com/api/stolen/v1/report/station 
+body {
+    id: _id , station : _id(station)
+}
