@@ -18,6 +18,6 @@
     "mongodb": "^3.5.5",
     "monk": "^7.1.2",
     "nodemon": "^2.0.2",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   }
 }
